@@ -13,6 +13,15 @@ namespace SäkerProgrameringU3 {
     public partial class Index {
         
         /// <summary>
+        /// body control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl body;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -20,15 +29,6 @@ namespace SäkerProgrameringU3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// loginLbl control.
@@ -40,13 +40,13 @@ namespace SäkerProgrameringU3 {
         protected global::System.Web.UI.WebControls.Label loginLbl;
         
         /// <summary>
-        /// TextBox1 control.
+        /// loginTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox loginTB;
         
         /// <summary>
         /// pwLbl control.
@@ -58,21 +58,21 @@ namespace SäkerProgrameringU3 {
         protected global::System.Web.UI.WebControls.Label pwLbl;
         
         /// <summary>
-        /// TextBox2 control.
+        /// pwTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox pwTB;
         
         /// <summary>
-        /// Button1 control.
+        /// loginBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button loginBtn;
     }
 }
