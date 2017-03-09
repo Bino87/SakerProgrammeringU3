@@ -32,3 +32,8 @@ G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\InternetApplication\
 G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\InternetApplication\obj\Debug\InternetApplication.csprojResolveAssemblyReference.cache
 G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\InternetApplication\obj\Debug\InternetApplication.dll
 G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\InternetApplication\obj\Debug\InternetApplication.pdb
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\InternetApplication\bin\Database.xls
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\InternetApplication\bin\DatabaseInterface.dll
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\InternetApplication\bin\UtilitiesLibrary.dll
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\InternetApplication\bin\DatabaseInterface.pdb
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\InternetApplication\bin\UtilitiesLibrary.pdb

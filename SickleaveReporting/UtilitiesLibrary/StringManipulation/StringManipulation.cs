@@ -9,7 +9,7 @@ namespace Utilities
     {
         public static string Neutralize(string text)
         {
-            return Regex.Replace(text.Replace("'", ""), @"<(.|\n)*?>", string.Empty).Replace("'", "");
+            return Regex.Replace(text.Replace("'", ""), @"<(.|\n)*?>", string.Empty).Replace("'", "").Replace("&nbsp;", "").Replace(";", "").Replace(",", ".").Replace(")", "").Replace("\"", "");
         }
     }
 }
