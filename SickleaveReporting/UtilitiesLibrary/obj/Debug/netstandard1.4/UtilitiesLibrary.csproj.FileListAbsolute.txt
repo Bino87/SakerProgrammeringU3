@@ -1,0 +1,7 @@
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\UtilitiesLibrary\bin\Debug\netstandard1.4\UtilitiesLibrary.deps.json
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\UtilitiesLibrary\bin\Debug\netstandard1.4\UtilitiesLibrary.dll
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\UtilitiesLibrary\bin\Debug\netstandard1.4\UtilitiesLibrary.pdb
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\UtilitiesLibrary\obj\Debug\netstandard1.4\UtilitiesLibrary.csprojResolveAssemblyReference.cache
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\UtilitiesLibrary\obj\Debug\netstandard1.4\UtilitiesLibrary.AssemblyInfo.cs
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\UtilitiesLibrary\obj\Debug\netstandard1.4\UtilitiesLibrary.dll
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\UtilitiesLibrary\obj\Debug\netstandard1.4\UtilitiesLibrary.pdb

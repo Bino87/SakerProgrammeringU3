@@ -1,0 +1,7 @@
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\DatabaseInterface\bin\Debug\netstandard1.4\DatabaseInterface.deps.json
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\DatabaseInterface\bin\Debug\netstandard1.4\DatabaseInterface.dll
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\DatabaseInterface\bin\Debug\netstandard1.4\DatabaseInterface.pdb
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\DatabaseInterface\obj\Debug\netstandard1.4\DatabaseInterface.csprojResolveAssemblyReference.cache
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\DatabaseInterface\obj\Debug\netstandard1.4\DatabaseInterface.AssemblyInfo.cs
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\DatabaseInterface\obj\Debug\netstandard1.4\DatabaseInterface.dll
+G:\Jobb\Skola\Uppg3\SakerProgrammeringU3\SickleaveReporting\DatabaseInterface\obj\Debug\netstandard1.4\DatabaseInterface.pdb
