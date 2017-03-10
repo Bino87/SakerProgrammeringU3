@@ -22,15 +22,6 @@ namespace InternetApplication {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// loginLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label loginLbl;
-        
-        /// <summary>
         /// loginTB control.
         /// </summary>
         /// <remarks>
@@ -38,24 +29,6 @@ namespace InternetApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox loginTB;
-        
-        /// <summary>
-        /// loginRFV control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator loginRFV;
-        
-        /// <summary>
-        /// pwLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pwLbl;
         
         /// <summary>
         /// pwTB control.
@@ -67,39 +40,12 @@ namespace InternetApplication {
         protected global::System.Web.UI.WebControls.TextBox pwTB;
         
         /// <summary>
-        /// pwRFV control.
+        /// loginBTn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator pwRFV;
-        
-        /// <summary>
-        /// pwREV control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator pwREV;
-        
-        /// <summary>
-        /// loginBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button loginBtn;
-        
-        /// <summary>
-        /// validationSummary control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary validationSummary;
+        protected global::System.Web.UI.WebControls.Button loginBTn;
     }
 }
