@@ -10,15 +10,15 @@ using DatabaseInterface.Classes;
 
 namespace InternetApplication
 {
-    public partial class TestPage : System.Web.UI.Page
+    public partial class TestPage : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 			if(IsCallback)
 				 return;
-            User user = DatabaseInterface.Excel.CheckForUser("davi006", "uberPasswordDeluxe123%");
-            user = DatabaseInterface.Excel.CheckForUser("tofu23", "v3g3TaR1an!#");
-            user = DatabaseInterface.Excel.CheckForUser("kabi007", "#J4m3sB1konD%");
+            var  user = Excel.CheckForUser("davi006", "uberPasswordDeluxe123%");
+            user = Excel.CheckForUser("tofu23", "v3g3TaR1an!#");
+            user = Excel.CheckForUser("kabi007", "#J4m3sB1konD%");
 
 
             Excel.AddSickleave(user, Sickleave.SickleaveType.Sick, DateTime.Parse("2017-02-25"), DateTime.Parse("2017-03-12"), 0);
@@ -28,20 +28,13 @@ namespace InternetApplication
         }
 
 	    protected void loginBtn_OnClick(object sender, EventArgs e) {
-
-		    if (Excel.CheckForUser(loginTB.Text, pwTB.Text) != null) {
-			    //check if acc is closed. 
-				//if closed then give warnign.
-				//else redirect and add log message.
+		    errorLbl.Text = "";
+		    var user = Excel.CheckForUser(loginTB.Text, pwTB.Text);
+		    if (user != null) {
+				Response.Redirect("~/User/LoggedUser.aspx");
 		    } else {
-			    //login failed 
-				//increment user failed attempt
-				//if failed attempt > maxfailed attempt 
-				//close account
+			    errorLbl.Text = "Login failed!";
 		    }
-
-
 	    }
-
     }
 }

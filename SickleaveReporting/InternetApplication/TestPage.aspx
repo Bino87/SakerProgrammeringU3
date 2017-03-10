@@ -11,6 +11,7 @@
         <div style="position: absolute; top: 15%; left: 35%">
 
 
+            <asp:Label runat="server" Text="" ForeColor="red" ID="errorLbl"/><br/>
             <asp:Label runat="server" Text="Login:" Width="75px" />
             <asp:TextBox runat="server" ID="loginTB" />
             <br />
