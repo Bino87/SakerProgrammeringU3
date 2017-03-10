@@ -17,6 +17,9 @@ namespace InternetApplication
             User user = new User(1);
 
             Excel.AddSickleave(user, Sickleave.SickleaveType.Sick, DateTime.Parse("2017-02-25"), DateTime.Parse("2017-03-12"), 0);
+            Excel.AddLogMessage(user, Request.UserHostAddress, "Opened testpage: "+Request.Url);
+            Excel.AddLogMessage(user, Request.UserHostAddress, "Opened testpage line 2: " + Request.Url);
+            Excel.AddLogMessage(user, Request.UserHostAddress, "Opened testpage line 3: " + Request.Url);
         }
     }
 }

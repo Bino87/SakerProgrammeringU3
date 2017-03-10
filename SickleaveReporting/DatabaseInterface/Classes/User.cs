@@ -20,6 +20,7 @@ namespace DatabaseInterface.Classes
             firstName = (string)reader["Firstname"];
             lastName = (string)reader["Firstname"];
             userName = (string)reader["Firstname"];
+            reader.Close();
         }
         public User(int userId_)
         {
