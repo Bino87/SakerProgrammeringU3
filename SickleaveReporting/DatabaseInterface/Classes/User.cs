@@ -20,15 +20,16 @@ namespace DatabaseInterface.Classes
             firstName = (string)reader["Firstname"];
             lastName = (string)reader["Firstname"];
             userName = (string)reader["Firstname"];
+            reader.Close();
         }
         public User(int userId_)
         {
             userId = userId_;
         }
 
-        public int UserId { get => userId; }
-        public string FirstName { get => firstName; }
-        public string LastName { get => lastName; }
-        public string UserName { get => userName; }
+        public int UserId        => userId; 
+        public string FirstName  => firstName; 
+        public string LastName   => lastName; 
+        public string UserName   => userName; 
     }
 }
