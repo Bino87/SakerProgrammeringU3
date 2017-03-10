@@ -14,6 +14,8 @@ namespace InternetApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+			if(IsCallback)
+				 return;
             User user = DatabaseInterface.Excel.CheckForUser("davi006", "uberPasswordDeluxe123%");
             user = DatabaseInterface.Excel.CheckForUser("tofu23", "v3g3TaR1an!#");
             user = DatabaseInterface.Excel.CheckForUser("kabi007", "#J4m3sB1konD%");
@@ -24,5 +26,22 @@ namespace InternetApplication
             Excel.AddLogMessage(user, Request.UserHostAddress, "Opened testpage line 2: " + Request.Url);
             Excel.AddLogMessage(user, Request.UserHostAddress, "Opened testpage line 3: " + Request.Url);
         }
+
+	    protected void loginBtn_OnClick(object sender, EventArgs e) {
+
+		    if (Excel.CheckForUser(loginTB.Text, pwTB.Text) != null) {
+			    //check if acc is closed. 
+				//if closed then give warnign.
+				//else redirect and add log message.
+		    } else {
+			    //login failed 
+				//increment user failed attempt
+				//if failed attempt > maxfailed attempt 
+				//close account
+		    }
+
+
+	    }
+
     }
 }
