@@ -13,7 +13,7 @@ namespace DatabaseInterface
         public static User CheckForUser(string userName, string password)
         {
             userName = StringManipulation.Neutralize(userName);
-            password = password.Replace("'", "");
+            password = HashPassword(password).Replace("'", "");
             string connectionString = GetExcelDatabaseConnectionString();
             using (OleDbConnection connection = new OleDbConnection(connectionString))
             {
@@ -26,6 +26,10 @@ namespace DatabaseInterface
                     return null;
                 }
             }
+        }
+        private static string HashPassword(string password)
+        {
+            return Utilities.Hashing.SHA256Hashing.Hash(Utilities.Hashing.SHA256Hashing.Hash(password, "#¤!3supersecretSalt12123$1ASXZ3#%¤"), "Sal5s123!#¤a123SA");
         }
         public static void AddSickleave(User user, Sickleave.SickleaveType sickleaveType, DateTime fromDate, DateTime toDate, long childSocNo)
         {

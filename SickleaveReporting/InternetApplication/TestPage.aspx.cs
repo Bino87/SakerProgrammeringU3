@@ -14,7 +14,10 @@ namespace InternetApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            User user = new User(1);
+            User user = DatabaseInterface.Excel.CheckForUser("davi006", "uberPasswordDeluxe123%");
+            user = DatabaseInterface.Excel.CheckForUser("tofu23", "v3g3TaR1an!#");
+            user = DatabaseInterface.Excel.CheckForUser("kabi007", "#J4m3sB1konD%");
+
 
             Excel.AddSickleave(user, Sickleave.SickleaveType.Sick, DateTime.Parse("2017-02-25"), DateTime.Parse("2017-03-12"), 0);
             Excel.AddLogMessage(user, Request.UserHostAddress, "Opened testpage: "+Request.Url);

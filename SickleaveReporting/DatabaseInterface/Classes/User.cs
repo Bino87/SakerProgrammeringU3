@@ -16,10 +16,11 @@ namespace DatabaseInterface.Classes
 
         public User(OleDbDataReader reader)
         {
-            userId = (int) reader["Firstname"];
+            reader.Read();
+            userId = Convert.ToInt32((double) reader["UserId"]);
             firstName = (string)reader["Firstname"];
-            lastName = (string)reader["Firstname"];
-            userName = (string)reader["Firstname"];
+            lastName = (string)reader["LastName"];
+            userName = (string)reader["UserName"];
             reader.Close();
         }
         public User(int userId_)
@@ -29,7 +30,7 @@ namespace DatabaseInterface.Classes
 
         public int UserId { get => userId; }
         public string FirstName { get => firstName; }
-        public string LastName { get => lastName; }
         public string UserName { get => userName; }
+        public string LastName { get => lastName;  }
     }
 }
