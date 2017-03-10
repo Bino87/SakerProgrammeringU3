@@ -18,7 +18,7 @@ namespace DatabaseInterface.Classes
         {
             reader.Read();
             userId = Convert.ToInt32((double) reader["UserId"]);
-            firstName = (string)reader["Firstname"];
+            firstName = (string)reader["FirstName"];
             lastName = (string)reader["LastName"];
             userName = (string)reader["UserName"];
             reader.Close();
@@ -28,9 +28,9 @@ namespace DatabaseInterface.Classes
             userId = userId_;
         }
 
-        public int UserId { get => userId; }
-        public string FirstName { get => firstName; }
-        public string UserName { get => userName; }
-        public string LastName { get => lastName;  }
+        public int UserId        => userId; 
+        public string FirstName  => firstName; 
+        public string LastName   => lastName; 
+        public string UserName   => userName; 
     }
 }
