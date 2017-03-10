@@ -26,7 +26,6 @@ namespace DatabaseInterface
                         userOleDbReader.Read();
                         if (((DateTime)userOleDbReader["TemporaryDisabled"]) > DateTime.Now.AddDays(-1))
                             return null;
-
                         ResetFailedAttempt(userName);
                         return new User(userOleDbReader);
                     }
