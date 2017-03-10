@@ -14,6 +14,10 @@ namespace DatabaseInterface.Classes
         private string lastName;
         private string userName;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="reader"></param>
         public User(OleDbDataReader reader)
         {
             reader.Read();
