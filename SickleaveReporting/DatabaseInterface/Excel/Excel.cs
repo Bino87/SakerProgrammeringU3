@@ -18,12 +18,68 @@ namespace DatabaseInterface
             using (OleDbConnection connection = new OleDbConnection(connectionString))
             {
                 connection.Open();
-                using (OleDbCommand cmd = new OleDbCommand("SELECT * FROM [Users$] WHERE Username = '" + userName + "' AND Password='" + password + "'", connection))
+                using (OleDbCommand cmd = new OleDbCommand("SELECT * FROM [Users$] WHERE Username = '" + userName + "' AND Password='" + password + "' AND FailedAttempts < 10 ", connection))
                 {
-                    var userFound = cmd.ExecuteReader();
-                    if (userFound.HasRows)
-                        return new User(userFound);
+                    var userOleDbReader = cmd.ExecuteReader();
+                    if (userOleDbReader.HasRows)
+                    {
+                        userOleDbReader.Read();
+                        if (((DateTime)userOleDbReader["TemporaryDisabled"]) > DateTime.Now.AddDays(-1))
+                            return null;
+
+                        ResetFailedAttempt(userName);
+                        return new User(userOleDbReader);
+                    }
+                    IncrementFailedAttempt(userName);
                     return null;
+                }
+            }
+        }
+        public static void IncrementFailedAttempt(string userName)
+        {
+            userName = StringManipulation.Neutralize(userName);
+            string connectionString = GetExcelDatabaseConnectionString();
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            {
+                connection.Open();
+                using (OleDbCommand cmd = new OleDbCommand("UPDATE [Users$] SET FailedAttempts = FailedAttempts+1 WHERE Username = '" + userName + "' ", connection))
+                {
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "SELECT FailedAttempts FROM [Users$] WHERE Username = '"+userName+"'";
+                    
+                    object result = cmd.ExecuteScalar();
+                    if (result != System.DBNull.Value)
+                    {
+                        if (((double)result) == 5)
+                            TemporaryLockAccount(userName);
+                    }
+
+                }
+            }
+        }
+        public static void ResetFailedAttempt(string userName)
+        {
+            userName = StringManipulation.Neutralize(userName);
+            string connectionString = GetExcelDatabaseConnectionString();
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            {
+                connection.Open();
+                using (OleDbCommand cmd = new OleDbCommand("UPDATE [Users$] SET FailedAttempts = 0 WHERE Username = '" + userName + "' ", connection))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        public static void TemporaryLockAccount(string userName)
+        {
+            userName = StringManipulation.Neutralize(userName);
+            string connectionString = GetExcelDatabaseConnectionString();
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            {
+                connection.Open();
+                using (OleDbCommand cmd = new OleDbCommand("UPDATE [Users$] SET TemporaryDisabled = '"+DateTime.Now.ToString("yyyy-MM-dd")+"' WHERE Username = '" + userName + "' ", connection))
+                {
+                    cmd.ExecuteNonQuery();
                 }
             }
         }
