@@ -10,7 +10,7 @@
 namespace InternetApplication {
     
     
-    public partial class TestPage {
+    public partial class Index {
         
         /// <summary>
         /// form1 control.

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DatabaseInterface;
 
 namespace InternetApplication.User
 {
@@ -12,8 +13,11 @@ namespace InternetApplication.User
 		protected void Page_Load(object sender, EventArgs e){
 
 			if(IsCallback) return;
-			
 
+
+		    var user = new DatabaseInterface.Classes.User(int.Parse(Request.Cookies["user"]["id"]));
+
+		    Excel.AddLogMessage(user, Request.UserHostAddress, $"Redirected to: {Request.Url} from: {Request.UrlReferrer}");
 		}
 	}
 }

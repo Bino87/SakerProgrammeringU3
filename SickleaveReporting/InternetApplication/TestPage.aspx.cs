@@ -10,7 +10,7 @@ using DatabaseInterface.Classes;
 
 namespace InternetApplication
 {
-    public partial class TestPage : Page
+    public partial class Index : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,7 +31,15 @@ namespace InternetApplication
 		    errorLbl.Text = "";
 		    var user = Excel.CheckForUser(loginTB.Text, pwTB.Text);
 		    if (user != null) {
+                var cookie =  new HttpCookie("user");
+		        cookie["id"] = user.UserId.ToString();
+		        cookie["userN"] = user.UserName;
+		        cookie["fName"] = user.FirstName;
+		        cookie["lName"] = user.LastName;
+                Response.Cookies.Add(cookie);
 				Response.Redirect("~/User/LoggedUser.aspx");
+                Excel.AddLogMessage(user,Request.UserHostAddress,$"redirecting to: {Response.RedirectLocation}");
+                
 		    } else {
 			    errorLbl.Text = "Login failed!";
 		    }
