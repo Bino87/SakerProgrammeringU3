@@ -65,7 +65,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TestPage.aspx" />
+    <Content Include="User\LoggedUser.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +85,13 @@
     </Compile>
     <Compile Include="TestPage.aspx.designer.cs">
       <DependentUpon>TestPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\LoggedUser.aspx.cs">
+      <DependentUpon>LoggedUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\LoggedUser.aspx.designer.cs">
+      <DependentUpon>LoggedUser.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

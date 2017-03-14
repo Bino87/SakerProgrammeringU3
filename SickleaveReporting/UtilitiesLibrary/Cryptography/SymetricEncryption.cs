@@ -5,10 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.IO;
-
-namespace Utilities.SymetricEncryption
+/// <summary>
+/// Help functions related to Symmetric encryption
+/// </summary>
+namespace Utilities.SymmetricEncryption
 {
-
+    /// <summary>
+    /// AES encryption related functions
+    /// </summary>
     public static class AESEncryption
     {
         public static string Encrypt(string data, string encryptionkey)
