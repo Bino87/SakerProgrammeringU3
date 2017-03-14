@@ -4,6 +4,7 @@ using Utilities;
 using DatabaseInterface.Classes;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace DatabaseInterface
 {
@@ -78,6 +79,8 @@ namespace DatabaseInterface
         {
             if (CheckForPasswordReuse(userName, password))
                 return false;
+            if (!TestPasswordMinimumRequirements(password))
+                return false;
             userName = StringManipulation.Neutralize(userName);
             string hashedPassword = HashPassword(password).Replace("'", "");
             string connectionString = GetExcelDatabaseConnectionString();
@@ -100,6 +103,18 @@ namespace DatabaseInterface
         public static bool ChangePassword(string userName, string password)
         {
             return UnlockUserAccount(userName, password);
+        }
+        /// <summary>
+        /// Check that minimum password strength is fulfilled
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        private static bool TestPasswordMinimumRequirements(string password)
+        {
+            if (password.Length < 12 || !Regex.Match(password, @"\d+").Success || !Regex.Match(password, @"[a-z]").Success || !Regex.Match(password, @"[A-Z]").Success || !Regex.Match(password, @".[!,@,#,$,%,^,&,*,?,_,~,-,£,(,)]").Success)
+                return false;
+            return true;
+
         }
 
         /// <summary>
