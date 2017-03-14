@@ -18,34 +18,36 @@ namespace InternetApplication.User
             if (IsPostBack)
                 return;
 
-            var cookie = Request.Cookies["user"];
+            //var cookie = Request.Cookies["user"];
 
-            if (cookie == null)
-                Response.Redirect("~/TestPage.aspx");
+            //if (cookie == null)
+            //    Response.Redirect("~/TestPage.aspx");
 
-            if (cookie == null)
-                return;
-            var userID = int.Parse(cookie["id"]);
+            //if (cookie == null)
+            //    return;
+            //var userID = int.Parse(cookie["id"]);
 
-            var user = new DatabaseInterface.Classes.User(userID);
-            var fName = cookie["fName"];
-            var lName = cookie["lName"];
+            var user = (DatabaseInterface.Classes.User) Session["User"]; 
+            var fName = user.FirstName;
+            var lName = user.LastName;
 
             nameLbl.Text = $"Hello {fName} {lName}!";
 
-            leaveTypeDdl.Items.Add(new ListItem("Myself", ( (int)SickleaveType.Sick ).ToString()));
-            leaveTypeDdl.Items.Add(new ListItem("Child", ( (int)SickleaveType.WAB ).ToString()));
+            leaveTypeDdl.Items.Add(new ListItem("Sjukskrivning utan läkarintyg", ( (int)SickleaveType.SickWithOutRef ).ToString()));
+            leaveTypeDdl.Items.Add(new ListItem("Sjukskrivning med läkarintyg", ( (int)SickleaveType.SickWithRef ).ToString()));
+            leaveTypeDdl.Items.Add(new ListItem("Vård av barn", ((int)SickleaveType.VAB).ToString()));
 
 
-            Excel.AddLogMessage(user, Request.UserHostAddress,
-                $"Redirected to: {Request.Url} from: {Request.UrlReferrer}");
+            Excel.AddLogMessage(Request.UserHostAddress,
+                $"Redirected to: {Request.Url} from: {Request.UrlReferrer}", user.UserId);
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e) {
-            var cookie = Request.Cookies["user"];
-            var userID = int.Parse(cookie["id"]);
-            var user = new DatabaseInterface.Classes.User(userID);
-            var sickLeavetype = leaveTypeDdl.SelectedIndex == 0 ? SickleaveType.Sick : SickleaveType.WAB;
+            var user = (DatabaseInterface.Classes.User)Session["User"];
+            //var cookie = Request.Cookies["user"];
+            //var userID = int.Parse(cookie["id"]);
+            //var user = new DatabaseInterface.Classes.User(userID);
+            SickleaveType sickLeavetype = (SickleaveType)int.Parse(leaveTypeDdl.SelectedValue); //(SickleaveType) leaveTypeDdl.SelectedIndex; 
             long prNr;
             var startDate = DateTime.Parse(Request.Form[txtDateTB.UniqueID]);
             var endDate = DateTime.Parse(Request.Form[txtDateEndTB.UniqueID]);

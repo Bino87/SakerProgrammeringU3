@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
-
-namespace Utilities.AssymetricEncryption
+/// <summary>
+/// Vinberg: Help functions related to Asymmetric encryption
+/// </summary>
+namespace Utilities.AsymmetricEncryption
 {
-
+    /// <summary>
+    /// Vinberg: RSA encryption related help functions 
+    /// </summary>
     public static class RSAEncryption
     {
         private static int keySize = 4096;
