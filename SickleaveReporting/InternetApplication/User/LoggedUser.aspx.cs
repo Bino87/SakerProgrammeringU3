@@ -26,15 +26,17 @@ namespace InternetApplication.User
             //if (cookie == null)
             //    return;
             //var userID = int.Parse(cookie["id"]);
-
-            var user = (DatabaseInterface.Classes.User) Session["User"]; 
+            //lqwtyvt1nemjkamdstopvdxx
+            string test = Session.SessionID;
+            var user = (DatabaseInterface.Classes.User) Session["User"];
+            Session["User"] = user;
             var fName = user.FirstName;
             var lName = user.LastName;
 
             nameLbl.Text = $"Hello {fName} {lName}!";
 
-            leaveTypeDdl.Items.Add(new ListItem("Sjukskrivning utan läkarintyg", ( (int)SickleaveType.SickWithOutRef ).ToString()));
-            leaveTypeDdl.Items.Add(new ListItem("Sjukskrivning med läkarintyg", ( (int)SickleaveType.SickWithRef ).ToString()));
+            leaveTypeDdl.Items.Add(new ListItem("Sjukskrivning utan läkarintyg", ((int)SickleaveType.SickWithOutRef).ToString()));
+            leaveTypeDdl.Items.Add(new ListItem("Sjukskrivning med läkarintyg", ((int)SickleaveType.SickWithRef).ToString()));
             leaveTypeDdl.Items.Add(new ListItem("Vård av barn", ((int)SickleaveType.VAB).ToString()));
 
 
@@ -44,6 +46,7 @@ namespace InternetApplication.User
 
         protected void btnSubmit_Click(object sender, EventArgs e) {
             var user = (DatabaseInterface.Classes.User)Session["User"];
+            string test = Session.SessionID;
             //var cookie = Request.Cookies["user"];
             //var userID = int.Parse(cookie["id"]);
             //var user = new DatabaseInterface.Classes.User(userID);

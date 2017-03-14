@@ -19,6 +19,8 @@ namespace InternetApplication
         {
 			if(IsCallback)
 				 return;
+            if (IsPostBack)
+                return;
             var user = Excel.CheckForUser("davi006", "uberPasswordDeluxe123%");
             user = Excel.CheckForUser("tofu23", "v3g3TaR1an!#");
             user = Excel.CheckForUser("kabi007", "#J4m3sB1konD%");
@@ -46,6 +48,7 @@ namespace InternetApplication
                 //cookie["fName"] = user.FirstName;
                 //cookie["lName"] = user.LastName;
                 //Response.Cookies.Add(cookie);
+                string test = Session.SessionID;
                 Session["User"] = user; 
                 Excel.AddLogMessage(Request.UserHostAddress,$"redirecting to: {Response.RedirectLocation}", user.UserId);
                 Server.Transfer("~/User/LoggedUser.aspx");

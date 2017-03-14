@@ -99,7 +99,7 @@ namespace DatabaseInterface
         /// </summary>
         /// <param name="userName">Username</param>
         /// <param name="password">Password</param>
-        /// <returns></returns>
+        /// <returns>True if success</returns>
         public static bool ChangePassword(string userName, string password)
         {
             return UnlockUserAccount(userName, password);
@@ -320,7 +320,7 @@ namespace DatabaseInterface
         /// <returns>Complete connection string</returns>
         private static string GetExcelDatabaseConnectionString()
         {
-            return "Provider=Microsoft.Jet.OLEDB.4.0; Data Source='" + System.Web.HttpRuntime.BinDirectory + "Database.xls';Mode=ReadWrite;Extended Properties=\"Excel 8.0;HDR=YES;IMEX=0;MAXSCANROWS=0\" ";
+            return "Provider=Microsoft.Jet.OLEDB.4.0; Data Source='" + System.Web.HttpRuntime.BinDirectory + "..\\..\\Database.xls';Mode=ReadWrite;Extended Properties=\"Excel 8.0;HDR=YES;IMEX=0;MAXSCANROWS=0\" ";
         }
     }
 }
