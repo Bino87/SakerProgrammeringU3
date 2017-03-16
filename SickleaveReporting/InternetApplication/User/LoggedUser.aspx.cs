@@ -34,11 +34,7 @@ namespace InternetApplication.User
             Excel.AddLogMessage(Request.UserHostAddress, $"Redirected to: {Request.Url} from: {Request.UrlReferrer}",
                 user.UserId);
             
-            var temp = Excel.GetSickleaveList(user);
-
-            sickLeaveBL.DataSource = SickLeaveWraper.TripSickLeaveData(new List<Sickleave>());
-
-            sickLeaveBL.DataBind();
+            
         }
 
         /// <summary>

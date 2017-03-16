@@ -48,10 +48,20 @@ namespace InternetApplication
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void OnClick(object sender, EventArgs e) {
-            
-            Excel.AddLogMessage(Request.UserHostAddress,$"Change password via IP: {Request.UserHostAddress}");
+        protected void ChangePasswordOnClick(object sender, EventArgs e) {
+            Excel.AddLogMessage(Request.UserHostAddress, $"Change password via IP: {Request.UserHostAddress}");
             Response.Redirect("~/ChangePassword.aspx");
+        }
+
+        protected void LogInAsAdminOnClick(object sender, EventArgs e) {
+            var login = loginTB.Text;
+            var pass = pwTB.Text;
+
+            var user = Excel.CheckForUser(login, pass);
+
+            if (user == null)
+                return;
+            Response.Redirect("http://localhost:50727/Index.aspx");
         }
 
     }

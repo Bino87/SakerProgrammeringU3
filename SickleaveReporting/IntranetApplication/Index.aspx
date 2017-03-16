@@ -1,13 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TestPage.aspx.cs" Inherits="InternetApplication.Index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="IntranetApplication.Index" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Index</title>
+    <title>Admin Index</title>
 </head>
 <body>
-    <form id="form1" runat="server" >
+    <form id="form1" runat="server">
         <div style="position: absolute; top: 15%; left: 35%">
 
 
@@ -19,9 +19,7 @@
             <asp:TextBox runat="server" ID="pwTB" TextMode="Password"  />
 
             <div style="position: relative; left: 78px; top: 5px">
-                <asp:Button runat="server" ID="loginBTn" OnClick="loginBtn_OnClick" Text="Log in" /><br/>
                 <asp:Button runat="server" Text="Log in as Admin" OnClick="LogInAsAdminOnClick"/>
-                <asp:Button runat="server" Text="Change Password" OnClick="ChangePasswordOnClick"/>
             </div>
             <div style="position: relative; top: 8px; left: 1%">
 

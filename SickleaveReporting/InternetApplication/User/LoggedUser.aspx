@@ -69,21 +69,6 @@
                 </div>
 
             </div>
-
-            <asp:GridView runat="server" ID="sickLeaveBL" AutoGenerateColumns="False" GridLines="None"
-                CellSpacing="4">
-                <HeaderStyle BackColor="gray" />
-                <AlternatingRowStyle BackColor="white"/>
-                <Columns>
-
-                    <asp:BoundField HeaderText="User ID:" DataField="UserId" ItemStyle-Width="5%" ItemStyle-HorizontalAlign="Center"/>
-                    <asp:BoundField HeaderText="From:" DataField="FromDate"  ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center"/>
-                    <asp:BoundField HeaderText="To:" DataField="ToDate"  ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center"/>
-                    <asp:BoundField HeaderText="Sick Leave Type:" DataField="SickLeaveType" ItemStyle-Width="20%" ItemStyle-HorizontalAlign="Center"/>
-                    <asp:BoundField HeaderText="Child Soc Nr:" DataField="ChildSocNo" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center"/>
-
-                </Columns>
-            </asp:GridView>
         </div>
 
     </form>
