@@ -19,5 +19,6 @@ namespace Utilities
         {
             return Regex.Replace(text.Replace("'", ""), @"<(.|\n)*?>", string.Empty).Replace("'", "").Replace("&nbsp;", "").Replace(";", "").Replace(",", ".").Replace(")", "").Replace("\"", "");
         }
+        
     }
 }

@@ -43,12 +43,12 @@ namespace DatabaseInterface.Classes
 
         }
 
-        public SickleaveType SickLeaveType { get => sickLeaveType; }
-        public long SickleaveId { get => sickleaveId; }
-        public long UserId { get => userId;  }
-        public DateTime FromDate { get => fromDate;}
-        public DateTime ToDate { get => toDate; }
-        public string ChildSocNo { get => childSocNo; }
+        public SickleaveType SickLeaveType => sickLeaveType; 
+        public long SickleaveId => sickleaveId; 
+        public long UserId  => userId;  
+        public DateTime FromDate => fromDate;
+        public DateTime ToDate => toDate; 
+        public string ChildSocNo => childSocNo; 
 
        
     }

@@ -4,6 +4,10 @@ using Utilities;
 using DatabaseInterface.Classes;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text.RegularExpressions;
+using System.Web;
+using System.Web.UI;
 
 namespace DatabaseInterface
 {
@@ -78,6 +82,8 @@ namespace DatabaseInterface
         {
             if (CheckForPasswordReuse(userName, password))
                 return false;
+            if (!TestPasswordMinimumRequirements(password))
+                return false;
             userName = StringManipulation.Neutralize(userName);
             string hashedPassword = HashPassword(password).Replace("'", "");
             string connectionString = GetExcelDatabaseConnectionString();
@@ -96,10 +102,22 @@ namespace DatabaseInterface
         /// </summary>
         /// <param name="userName">Username</param>
         /// <param name="password">Password</param>
-        /// <returns></returns>
+        /// <returns>True if success</returns>
         public static bool ChangePassword(string userName, string password)
         {
             return UnlockUserAccount(userName, password);
+        }
+        /// <summary>
+        /// Check that minimum password strength is fulfilled
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        private static bool TestPasswordMinimumRequirements(string password)
+        {
+            if (password.Length < 12 || !Regex.Match(password, @"\d+").Success || !Regex.Match(password, @"[a-z]").Success || !Regex.Match(password, @"[A-Z]").Success || !Regex.Match(password, @".[!,@,#,$,%,^,&,*,?,_,~,-,£,(,)]").Success)
+                return false;
+            return true;
+
         }
 
         /// <summary>
@@ -299,13 +317,26 @@ namespace DatabaseInterface
             NextLogId++;
             return NextLogId;
         }
+
+        
         /// <summary>
         /// Get the connectionstring to the database
         /// </summary>
         /// <returns>Complete connection string</returns>
-        private static string GetExcelDatabaseConnectionString()
-        {
-            return "Provider=Microsoft.Jet.OLEDB.4.0; Data Source='" + System.Web.HttpRuntime.BinDirectory + "Database.xls';Mode=ReadWrite;Extended Properties=\"Excel 8.0;HDR=YES;IMEX=0;MAXSCANROWS=0\" ";
+        private static string GetExcelDatabaseConnectionString() {
+            var bin = HttpRuntime.BinDirectory;
+
+            var arr = bin.Split('\\');
+
+            string path = string.Empty;
+
+            for (int i = 0; i < arr.Length -3 ; i++) {
+                path += $"{arr[i]}\\";
+            }
+
+
+
+            return "Provider=Microsoft.Jet.OLEDB.4.0; Data Source='" + path + "Database.xls';Mode=ReadWrite;Extended Properties=\"Excel 8.0;HDR=YES;IMEX=0;MAXSCANROWS=0\" ";
         }
     }
 }

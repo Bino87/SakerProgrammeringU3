@@ -19,7 +19,8 @@
             <asp:TextBox runat="server" ID="pwTB" TextMode="Password"  />
 
             <div style="position: relative; left: 78px; top: 5px">
-                <asp:Button runat="server" ID="loginBTn" OnClick="loginBtn_OnClick" Text="Log in" />
+                <asp:Button runat="server" ID="loginBTn" OnClick="loginBtn_OnClick" Text="Log in" /><br/>
+                <asp:Button runat="server" Text="Change Password" OnClick="OnClick"/>
             </div>
             <div style="position: relative; top: 8px; left: 1%">
 

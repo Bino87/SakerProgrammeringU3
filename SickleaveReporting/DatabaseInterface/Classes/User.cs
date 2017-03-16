@@ -37,6 +37,6 @@ namespace DatabaseInterface.Classes
         public string LastName   => lastName; 
         public string UserName   => userName;
 
-        public DateTime PasswordExpires { get => passwordExpires; }
+        public DateTime PasswordExpires => passwordExpires; 
     }
 }
