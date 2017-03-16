@@ -15,7 +15,9 @@
             <asp:RegularExpressionValidator runat="server" ControlToValidate="searchbyIDTB" ErrorMessage="Only Numbers are allowed."
                 ForeColor="red" Display="Dynamic" ValidationExpression="\d+" />
             <br />
-            <asp:Label runat="server" Text="Please enter employeeID."/><br/>
+            <asp:Label runat="server" Text="Please enter employeeID." Width="200px"/>
+            <asp:Label runat="server" Text="" ID="ErrorLbl" ForeColor="red" />
+             <br/>
             <asp:TextBox runat="server" ID="searchbyIDTB" />
 
             <asp:Button runat="server" Text="SearchById" OnClick="OnClick" />
