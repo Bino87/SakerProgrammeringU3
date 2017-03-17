@@ -20,7 +20,6 @@
 
             <div style="position: relative; left: 78px; top: 5px">
                 <asp:Button runat="server" ID="loginBTn" OnClick="loginBtn_OnClick" Text="Log in" /><br/>
-                <asp:Button runat="server" Text="Log in as Admin" OnClick="LogInAsAdminOnClick"/>
                 <asp:Button runat="server" Text="Change Password" OnClick="ChangePasswordOnClick"/>
             </div>
             <div style="position: relative; top: 8px; left: 1%">

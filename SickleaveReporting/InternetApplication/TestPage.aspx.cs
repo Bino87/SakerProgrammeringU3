@@ -53,16 +53,6 @@ namespace InternetApplication
             Response.Redirect("~/ChangePassword.aspx");
         }
 
-        protected void LogInAsAdminOnClick(object sender, EventArgs e) {
-            var login = loginTB.Text;
-            var pass = pwTB.Text;
-
-            var user = Excel.CheckForUser(login, pass);
-
-            if (user == null)
-                return;
-            Response.Redirect("http://localhost:50727/Index.aspx");
-        }
 
     }
 }
